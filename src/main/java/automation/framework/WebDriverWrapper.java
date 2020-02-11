@@ -15,7 +15,7 @@ public class WebDriverWrapper extends BaseTest {
 	public WebDriverWrapper(WebDriver driver) {
 		this.driver = driver;
 	}
-
+//this is a method for maximizing the window 
 	public void maximizeWindow() {
 		System.out.println("Maximize Window");
 		driver.manage().window().maximize();
