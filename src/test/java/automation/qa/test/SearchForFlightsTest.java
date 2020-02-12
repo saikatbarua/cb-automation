@@ -38,6 +38,8 @@ public class SearchForFlightsTest extends BaseTest {
 	                                                         .clickFindFlightsBtn();
 	  
 	  // User selects first result
+	  
+	  Thread.sleep(2000);
 	  PurchasePage purchasePage = selectionFlightsPage.clickFirstFlightFromResults();
 	  
 	  System.out.println("before clicking flight");
@@ -60,8 +62,16 @@ public class SearchForFlightsTest extends BaseTest {
 								                                         .purchaseFlightBtn();
 	  
 	  //now verification ticket was purchased
-	  Assert.assertEquals(confirmPage.getHeaderMessage(), "Thank you for your purchase today   !");
+	  Assert.assertEquals(confirmPage.getHeaderMessage(), "Thank you for your purchase today!");
+	
+	//Status of the ticket's purchased
+	  
+	  Assert.assertEquals(confirmPage.getConfirmationstStatus(), "PendingCapture");
+	  
 	  
   }
   
+
 }
+
+
