@@ -49,9 +49,9 @@ public class BaseTest {
 	 
   }
   
-  @AfterMethod
-  public void closeTest() {
+ // @AfterMethod
+  //public void closeTest() {
 	  
-	  driver.close();
+	 // driver.close();
   }
-}
+

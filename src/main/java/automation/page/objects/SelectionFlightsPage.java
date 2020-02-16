@@ -15,7 +15,7 @@ public class SelectionFlightsPage extends BasePage {
 	
 	public PurchasePage clickFirstFlightFromResults() {
 		
-		driver.clickElement(By.xpath("//tbody/tr[1]/td/input"));
+		driver.clickElement(By.xpath("//html/body/div[2]/table/tbody/tr[1]/td/input"));
 		return new PurchasePage(driver);
 	}
 
