@@ -19,5 +19,7 @@ public class SchoologyTest extends BaseTest {
 	                                 .enterUsername("saikat.785235@gmail.com")
 	                                 .enterPassword("h3ll0passw0rd");
 	
+	// login and verify page title the user is logged in
+	
 	}
 }
