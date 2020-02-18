@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Regression Test Suite for Blaze Demo" verbose="10">
+  <test name="Write new post">
+    <classes>
+      <class name="automation.qa.test.SearchForFlightsTest">
+        <methods>
+          <include name="purchaseInternationalFlights" />
+          <include name="searchForDomesticFlights" />
+        </methods>
+      </class>
+      <class name="automation.sample.test.SampleTest">
+        <methods>
+       	  <include name="anotherTestFromDifferentPackageTest"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

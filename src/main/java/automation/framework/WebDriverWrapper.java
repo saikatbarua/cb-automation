@@ -1,21 +1,28 @@
 package automation.framework;
 
-import java.util.concurrent.TimeUnit;
+import java.awt.RenderingHints.Key;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebDriverWrapper extends BaseTest {
 	
 	protected WebDriver driver;
+	protected WebDriverWait wait;
 	
-	public WebDriverWrapper(WebDriver driver) {
+	
+	public WebDriverWrapper(WebDriver driver, WebDriverWait wait) {
 		this.driver = driver;
+		this.wait = wait;
 	}
-//this is a method for maximizing the window 
+
+	//this is a method for maximizing the window 
 	public void maximizeWindow() {
 		System.out.println("Maximize Window");
 		driver.manage().window().maximize();
@@ -32,10 +39,8 @@ public class WebDriverWrapper extends BaseTest {
 	
 	public WebElement findElement(By by) {
 		
-		// fix this
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		System.out.println("Finding WebElement..." + by);
-		WebElement elem = driver.findElement(by);
+		WebElement elem = wait.until(ExpectedConditions.presenceOfElementLocated(by));
 		highlightWebElement(elem);
 		return elem;
 	}
@@ -56,9 +61,14 @@ public class WebDriverWrapper extends BaseTest {
 	
 	public void clearAndSendKeys(By by, String value) {
 		
-		findElement(by).clear();
-		findElement(by).sendKeys(value);
-		
+		// delete what is currently in the element
+		String selectAll = Keys.chord(Keys.CONTROL, "a");		
+		WebElement elem = findElement(by);
+		elem.sendKeys(selectAll);
+		elem.sendKeys(Keys.DELETE);
+	
+		// send keys to element
+		elem.sendKeys(value);
 	}
 	
 	public void selectFromDropdown(By by, String selection) {
@@ -69,6 +79,7 @@ public class WebDriverWrapper extends BaseTest {
 		
 	}
 	
+	
 	public void clickElement(By by) {
 		
 		driver.findElement(by).click();
@@ -77,6 +88,26 @@ public class WebDriverWrapper extends BaseTest {
 	public String getTextFrom(By by) {
 		
 		return driver.findElement(by).getText();
+	}
+
+	public boolean switchToWindowByTitle(String title) {
+		
+		boolean foundWindow = false;
+		
+		String winHandleBefore = driver.getWindowHandle();
+		
+		// Switch to new window handle opened then check title
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		    if (driver.getTitle().contains(title)) {
+		    	foundWindow = true;
+		    	break;
+		    } else {
+		    	foundWindow = false;
+		    }
+		}
+		 return foundWindow;
+		
 	}
 
 }
