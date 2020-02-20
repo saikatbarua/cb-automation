@@ -6,6 +6,7 @@ import automation.framework.BaseTest;
 import automation.page.objects.schoology.LandingPage;
 import automation.page.objects.schoology.LoginPage;
 
+
 public class SchoologyTest extends BaseTest {
 	
 	
@@ -22,4 +23,5 @@ public class SchoologyTest extends BaseTest {
 	// login and verify page title the user is logged in
 	
 	}
+
 }

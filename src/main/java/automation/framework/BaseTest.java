@@ -31,8 +31,13 @@ public class BaseTest {
 		 
 	 System.setProperty("webdriver.chrome.driver", FrameworkSetting.baseDir + FrameworkSetting.fileSeparator + "drivers\\chromedriver.exe");
 	 WebDriver driverFromSelenium = new ChromeDriver();
+<<<<<<< HEAD
 	 wait = new WebDriverWait(driverFromSelenium, FrameworkSetting.maxTimeout);
 	 this.driver = new WebDriverWrapper(driverFromSelenium, wait);
+=======
+	 this.driver = new WebDriverWrapper(driverFromSelenium);
+	 wait = new WebDriverWait(driverFromSelenium, FrameworkSetting.maxTimeout);
+>>>>>>> meherbranch1
 	 
  	} else if (FrameworkSetting.browserName.equalsIgnoreCase("ie")) {
 	 
@@ -49,9 +54,13 @@ public class BaseTest {
 	 driver.maximizeWindow();
   }
   
-  @AfterMethod
-  public void closeTest() {
+ // @AfterMethod
+  //public void closeTest() {
 	  
+<<<<<<< HEAD
 	 driver.close();
+=======
+	 // driver.close();
+>>>>>>> meherbranch1
   }
-}
+

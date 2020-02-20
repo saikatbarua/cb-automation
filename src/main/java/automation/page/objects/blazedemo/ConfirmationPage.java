@@ -22,6 +22,12 @@ public class ConfirmationPage extends BasePage {
 		
 	}
 	
-	
+public String getConfirmationstStatus() {
+		
+		String value = driver.getTextFrom(By.xpath("/html[1]/body[1]/div[2]/div[1]/table[1]/tbody[1]/tr[2]/td[2]"));
+		
+		return value;
+
+}
 
 }

@@ -10,6 +10,7 @@ public class LoginPage extends BasePage {
 	
 	public LoginPage(WebDriverWrapper driver) {
 		super(driver);
+<<<<<<< HEAD
 		this.driver = driver;
 	}
 	
@@ -24,3 +25,19 @@ public class LoginPage extends BasePage {
 	}
 
 }
+=======
+		this.driver = driver;		
+	}
+
+	public LoginPage enterUsername (String usernameValue) {
+		driver.clearAndSendKeys(By.id("edit-mail"),usernameValue);
+		return this;
+	}
+	
+	public LoginPage enterPassword (String passwordValue) {
+		driver.clearAndSendKeys(By.id("edit-pass"),passwordValue);
+		return this;
+	}
+	
+}
+>>>>>>> meherbranch1

@@ -10,6 +10,7 @@ public class LandingPage extends BasePage {
 	
 	public LandingPage(WebDriverWrapper driver) {
 		super(driver);
+<<<<<<< HEAD
 		this.driver = driver;
 	}
 	
@@ -22,3 +23,16 @@ public class LandingPage extends BasePage {
 
 
 }
+=======
+		this.driver = driver;		
+	}
+
+	public LoginPage clickLogin() {
+		driver.findElement(By.id("login-header")).click();
+		return new LoginPage(driver);
+	}
+	
+	
+	
+}
+>>>>>>> meherbranch1

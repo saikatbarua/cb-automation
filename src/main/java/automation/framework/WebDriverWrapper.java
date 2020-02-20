@@ -17,7 +17,11 @@ public class WebDriverWrapper extends BaseTest {
 	protected WebDriverWait wait;
 	
 	
+<<<<<<< HEAD
 	public WebDriverWrapper(WebDriver driver, WebDriverWait wait) {
+=======
+	public WebDriverWrapper(WebDriver driver) {
+>>>>>>> meherbranch1
 		this.driver = driver;
 		this.wait = wait;
 	}
@@ -39,6 +43,11 @@ public class WebDriverWrapper extends BaseTest {
 	
 	public WebElement findElement(By by) {
 		
+<<<<<<< HEAD
+=======
+		// fix this
+		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+>>>>>>> meherbranch1
 		System.out.println("Finding WebElement..." + by);
 		WebElement elem = wait.until(ExpectedConditions.presenceOfElementLocated(by));
 		highlightWebElement(elem);
