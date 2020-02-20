@@ -22,6 +22,7 @@ public class SchoologyTest extends BaseTest {
 	
 	// login and verify page title the user is logged in
 	
+	// Meher's 2nd comment for testing login and verify page title the user is logged in
 	}
 
 }
