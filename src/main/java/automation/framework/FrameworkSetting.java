@@ -14,6 +14,8 @@ public class FrameworkSetting {
 	
 	public static String testerName = null;
 	
+	public static int maxTimeout = 0;
+	
 	public static Properties prop;
 	
 	public static void initProperties() {
@@ -25,7 +27,7 @@ public class FrameworkSetting {
 			browserName = getProperty("browser");
 			url = getProperty("url");
 			testerName = getProperty("testerName");
-			
+			maxTimeout = getPropertyForInt("maxWaitInSeconds");
 					
 		} catch (Exception FrameowrkInitationException) {
 			// Enter log information
@@ -41,6 +43,11 @@ public class FrameworkSetting {
 		
 	}
 	
-	
+	public static int getPropertyForInt(String propertyName) {
+		String propertyValue = prop.getProperty(propertyName);
+		int maxTime = Integer.parseInt(propertyValue);
+		return maxTime;
+		
+	}
 	
 }

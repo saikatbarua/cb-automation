@@ -6,11 +6,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebDriverWrapper extends BaseTest {
 	
 	protected WebDriver driver;
+	
 	
 	public WebDriverWrapper(WebDriver driver) {
 		this.driver = driver;
@@ -33,9 +36,9 @@ public class WebDriverWrapper extends BaseTest {
 	public WebElement findElement(By by) {
 		
 		// fix this
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		System.out.println("Finding WebElement..." + by);
-		WebElement elem = driver.findElement(by);
+		WebElement elem = wait.until(ExpectedConditions.presenceOfElementLocated(by));
 		highlightWebElement(elem);
 		return elem;
 	}

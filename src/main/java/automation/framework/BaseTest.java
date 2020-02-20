@@ -7,6 +7,7 @@ import automation.framework.FrameworkSetting;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -15,7 +16,7 @@ public class BaseTest {
 
   
   public WebDriverWrapper driver = null;
-	
+  protected WebDriverWait wait = null;
 	
   @BeforeSuite
   public void suiteSetup() {
@@ -33,6 +34,7 @@ public class BaseTest {
 	 System.setProperty("webdriver.chrome.driver", FrameworkSetting.baseDir + FrameworkSetting.fileSeparator + "drivers\\chromedriver.exe");
 	 WebDriver driverFromSelenium = new ChromeDriver();
 	 this.driver = new WebDriverWrapper(driverFromSelenium);
+	 wait = new WebDriverWait(driverFromSelenium, FrameworkSetting.maxTimeout);
 	 
  	} else if (FrameworkSetting.browserName.equalsIgnoreCase("ie")) {
 	 

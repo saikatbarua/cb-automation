@@ -4,10 +4,10 @@ import org.junit.Assert;
 import org.testng.annotations.Test;
 
 import automation.framework.BaseTest;
-import automation.page.objects.ConfirmationPage;
-import automation.page.objects.PurchasePage;
-import automation.page.objects.SearchPage;
-import automation.page.objects.SelectionFlightsPage;
+import automation.page.objects.blazedemo.ConfirmationPage;
+import automation.page.objects.blazedemo.PurchasePage;
+import automation.page.objects.blazedemo.SearchPage;
+import automation.page.objects.blazedemo.SelectionFlightsPage;
 
 
 public class SearchForFlightsTest extends BaseTest {

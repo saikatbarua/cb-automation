@@ -3,8 +3,8 @@ package amazon.page.objects;
 import org.openqa.selenium.By;
 
 import automation.framework.WebDriverWrapper;
-import automation.page.objects.ConfirmationPage;
-import automation.page.objects.PurchasePage;
+import automation.page.objects.blazedemo.ConfirmationPage;
+import automation.page.objects.blazedemo.PurchasePage;
 
 public class AmazonHomePage extends BaseAmazonPage {
 

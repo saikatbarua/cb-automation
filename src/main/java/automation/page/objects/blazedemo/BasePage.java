@@ -1,4 +1,4 @@
-package automation.page.objects;
+package automation.page.objects.blazedemo;
 
 import org.openqa.selenium.WebDriver;
 
