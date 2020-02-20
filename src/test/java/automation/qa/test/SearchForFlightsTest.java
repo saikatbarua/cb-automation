@@ -65,7 +65,7 @@ public class SearchForFlightsTest extends BaseTest {
 	  Assert.assertEquals(confirmPage.getHeaderMessage(), "Thank you for your purchase today!");
 
 
-
+//new comment for testing 
 	  
   }
   
