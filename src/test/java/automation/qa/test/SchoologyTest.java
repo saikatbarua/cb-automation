@@ -21,7 +21,7 @@ public class SchoologyTest extends BaseTest {
 	                                 .enterPassword("h3ll0passw0rd");
 	
 	// login and verify page title the user is logged in
-	
+	//this is your test
 	}
 
 }
