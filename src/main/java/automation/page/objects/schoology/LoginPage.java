@@ -23,4 +23,11 @@ public class LoginPage extends BasePage {
 		return this;
 	}
 	
+public SchoologyHomePage clickLogin() {
+		
+		driver.clickElement(By.id("edit-submit"));
+		return new SchoologyHomePage(driver);
+	}
 }
+
+
