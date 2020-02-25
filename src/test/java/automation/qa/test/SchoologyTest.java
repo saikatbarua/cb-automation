@@ -36,10 +36,10 @@ public class SchoologyTest extends BaseTest {
 
 	// Users select new course, click Updates, enter a text, click post and then delete one of the posts
 	 coursesPage.clickTestCourse().clickUpdates().enterUpdate("Updating third auto post").clickPost();
-	 Thread.sleep(5000);
+	 Thread.sleep(5000); //don't use thread sleep -- this isn't necessary
 	 coursesPage.clickIconForUpdatingPost();
 	 Thread.sleep(2000);
-	 coursesPage.clickDeletePost();
+	 coursesPage.clickDeleteRecentPost();
 	 Thread.sleep(2000);
 	}
 		

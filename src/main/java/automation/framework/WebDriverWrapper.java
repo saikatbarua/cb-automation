@@ -1,6 +1,7 @@
 package automation.framework;
 
 import java.awt.RenderingHints.Key;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -44,6 +45,12 @@ public class WebDriverWrapper extends BaseTest {
 		WebElement elem = wait.until(ExpectedConditions.presenceOfElementLocated(by));
 		highlightWebElement(elem);
 		return elem;
+	}
+	
+	public List<WebElement> findElements(By by) {
+		
+		System.out.println("Finding List of WebElement..." + by);
+		return  driver.findElements(by);
 	}
 	
 	private void highlightWebElement(WebElement elem) {
@@ -117,6 +124,10 @@ public class WebDriverWrapper extends BaseTest {
 		}
 		 return foundWindow;
 		
+	}
+
+	public void clickElement(WebElement elem) {
+		elem.click();	
 	}
 
 }
