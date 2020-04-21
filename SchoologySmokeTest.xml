@@ -16,7 +16,8 @@
 	        <method>
 	        	<include name="studentDoesSomethingAgain" />
 	        </method>
-	        <!-- Comment to poll -->                              
+	        <!-- Comment to poll -->       
+	        <!-- Comment to poll -->                         
        </methods>
        </class> 
     </classes>
