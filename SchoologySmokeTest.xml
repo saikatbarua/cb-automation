@@ -1,19 +1,21 @@
 <?xml version ="1.0" encoding = "UTF-8"?>
-<suite name="Regression Test Suite for Amazon" verbose="10">
+<suite name="Regression Test Suite for Schoology" verbose="10">
   <test name="Write new post" >
     <classes>
       <class name="automation.qa.test.SchoologyTest">
         <methods>
-          <include name="studentLoginPositiveScenario" />            
-       </methods>
-       <methods>
-          <include name="studentLoginNegativeScenario" />            
-       </methods>
-       <methods>
-          <include name="studentDoesSomethingScenario" />            
-       </methods>
-       <methods>
-          <include name="studentDoesSomethingAgain" />            
+	        <method>
+	        	<include name="studentLoginPositiveScenario" />
+	        </method>
+	        <method>
+	        	<include name="studentLoginNegativeScenario" />
+	        </method>
+	        <method>
+	        	<include name="studentDoesSomethingScenario" />
+	        </method>
+	        <method>
+	        	<include name="studentDoesSomethingAgain" />
+	        </method>                              
        </methods>
        </class> 
     </classes>
